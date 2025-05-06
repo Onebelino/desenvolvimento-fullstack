@@ -19,4 +19,4 @@ db.sync()
     console.error('Erro ao conectar ao banco de dados:', error);
   });
 
-  // teste de alteração para commit
+  // teste de alteração para comm
