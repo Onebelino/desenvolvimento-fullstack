@@ -1,15 +1,24 @@
 const express = require('express');
 const router = express.Router();
-const Usuario = require('../models/usuario');
+const {register, getAll, getById, login, remove, update} = require('../controllers/usuarioController');
+const { authMiddleware } = require('../middleware/auth');
 
-router.get('/', async (req, res) => {
-  const usuarios = await Usuario.findAll();
-  res.json(usuarios);
-});
+// Registrar novo usuário
+router.post('/register', register);
 
-router.post('/', async (req, res) => {
-  const novoUsuario = await Usuario.create(req.body);
-  res.json(novoUsuario);
-});
+// Login de usuário
+router.post('/login', login);
+
+// Obter todos os usuários
+router.get('/dashboard', getAll);
+
+// Obter usuário por ID
+router.get('/:id', getById);
+
+// Atualizar usuário por ID
+router.put('/:id', update);
+
+// Excluir usuário por ID
+router.delete('/:id', remove);
 
 module.exports = router;
