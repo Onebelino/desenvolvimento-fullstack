@@ -18,3 +18,5 @@ db.sync()
   .catch((error) => {
     console.error('Erro ao conectar ao banco de dados:', error);
   });
+
+  // teste de alteração para commit
