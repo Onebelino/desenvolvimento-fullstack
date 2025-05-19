@@ -52,12 +52,13 @@ const Dashboard = () => {
 
 
   return (
+    //<button onClick={handleDeleteAccount} className='btn' id="delete-button">
+    //    Excluir conta
+    //  </button>
     <div>
       <h1>Dashboard</h1>
-      <button onClick={logout} className='btn' id="logout-button">Sair</button>
-      <button onClick={handleDeleteAccount} className='btn' id="delete-button">
-        Excluir conta
-      </button>
+      <button onClick={logout} className='btn' id="logout-button">Sair</button> 
+
       <ul className="user-card">
         {usuarios.map((u: any) => (
           <li key={u.id}>{u.name} - {u.email}</li>
@@ -68,3 +69,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+ 
